@@ -1,6 +1,6 @@
 <script setup>
 import {Link} from '@inertiajs/vue3';
-import Logo from "@/Components/DataDisplay/Logo.vue"
+import OdieLogo from "@/Components/DataDisplay/OdieLogo.vue"
 import MenuItem from "@/Components/Sidebar/MenuItem.vue"
 import MenuDelimiter from "@/Components/Sidebar/MenuDelimiter.vue"
 import MenuGroupHeader from "@/Components/Sidebar/MenuGroupHeader.vue"
@@ -17,14 +17,12 @@ import UserMenu from "../Navigation/UserMenu.vue";
 import QueueList from "../../Icons/QueueList.vue";
 import InformationCircle from "../../Icons/InformationCircle.vue";
 import Document from "../../Icons/Document.vue";
-import ProLabel from "../Pro/ProLabel.vue";
-import UpgradePro from "../Pro/UpgradePro.vue";
 </script>
 <template>
     <div class="w-full h-full flex flex-col py-2xl bg-white border-r border-gray-200">
         <div class="relative mb-12 px-xl">
             <Link :href="route('mixpost.dashboard')">
-                <Logo class="h-12"/>
+                <OdieLogo />
             </Link>
         </div>
 
@@ -128,20 +126,8 @@ import UpgradePro from "../Pro/UpgradePro.vue";
             </MenuGroupBody>
         </div>
 
-        <div class="px-xl pt-md mb-[3.0rem]">
+        <div class="px-xl pt-md mb-sm">
             <UserMenu/>
-        </div>
-
-        <div class="absolute bottom-0 mb-sm w-full">
-            <MenuDelimiter/>
-            <div class="flex flex-col items-start px-xl mt-sm">
-                <div class="text-sm text-gray-500 mb-xs">Lite version: {{ $page.props.mixpost.version }}</div>
-                <UpgradePro>
-                    <template #trigger>
-                        <ProLabel name="Unlock Pro Features" icon="lock-open"/>
-                    </template>
-                </UpgradePro>
-            </div>
         </div>
     </div>
 </template>
